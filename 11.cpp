@@ -1,34 +1,20 @@
-// IMPLEMENTATION OF GRAPH USING ADJENCY MATRIX
+// SELECTION SORT
 
-#include<stdio.h>
-
+#include<iostream>
+using namespace std;
 int main(){
-    int n,e;
-    int graph[20][20]={0};
-    int u,v;
-
-
-    printf("ENTER NUMBER OF VERTICES\n");
-    scanf("%d",&n);
-
-    printf("ENTER NUMBER OF EDGES\n");
-    scanf("%d",&e);
-
-
-    for(int i=0;i<e;i++){
-        printf("ENTER EDGE(u,v)\n");
-        scanf("%d %d",&u,&v);
-
-        graph[u][v]=1;
-        graph[v][u]=1;
-    }
-
-
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            printf("%d",graph[i][j]);
+      int arr[10]={5,3,8,6,7,2,1,4,9,0};
+      for(int i=0;i<9;i++){
+        int si=i;
+        for(int j=i+1;j<10;j++){
+            if(arr[j]<arr[si]){
+                si=j;
+            }
         }
+        swap(arr[i],arr[si]);
+      }
 
-        printf("\n");
+      for(int i=0;i<10;i++){
+        cout<<arr[i]<<" ";
     }
 }
